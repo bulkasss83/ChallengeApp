@@ -1,69 +1,52 @@
-﻿int number = 492433728;
-string numberAsString = number.ToString();
-char[] digits = numberAsString.ToArray();
+﻿using ChallengeApp;
 
-int counter0 = 0;
-int counter1 = 0;
-int counter2 = 0;
-int counter3 = 0;
-int counter4 = 0;
-int counter5 = 0;
-int counter6 = 0;
-int counter7 = 0;
-int counter8 = 0;
-int counter9 = 0;
+Employee user1 = new Employee("Andrzej", "Nowak", "27");
+Employee user2 = new Employee("Wincenty", "Kowalski", "33");
+Employee user3 = new Employee("Eleonora", "Karas", "29");
 
-foreach (char digit in digits)
+user1.AddScore(10); // Time keeping
+user1.AddScore(6);  // Sickness
+user1.AddScore(7);  // Efficiency
+user1.AddScore(9);  // Productivity
+user1.AddScore(10);  // Cooperation
+var result1 = user1.Result;
+
+user2.AddScore(10); // Time keeping
+user2.AddScore(10);  // Sickness
+user2.AddScore(10);  // Efficiency
+user2.AddScore(10);  // Productivity
+user2.AddScore(10);  // Cooperation
+var result2 = user2.Result;
+
+user3.AddScore(8); // Time keeping
+user3.AddScore(5);  // Sickness
+user3.AddScore(10);  // Efficiency
+user3.AddScore(10);  // Productivity
+user3.AddScore(5);  // Cooperation
+var result3 = user3.Result;
+
+List<Employee> users = new List<Employee>()
 {
-    if (digit == '0')
+    user1, user2, user3
+};
+int maxResult = 0;
+Employee userWithMaxResult = null;
+foreach (var user in users)
+{
+    if (user.Result > maxResult)
     {
-        counter0++;
+        maxResult = user.Result;
+        userWithMaxResult = user;
     }
-    else if (digit == '1')
-    {
-        counter1++;
-    }
-    else if (digit == '2')
-    {
-        counter2++;
-    }
-    else if (digit == '3')
-    {
-        counter3++;
-    }
-    else if (digit == '4')
-    {
-        counter4++;
-    }
-    else if (digit == '5')
-    {
-        counter5++;
-    }
-    else if (digit == '6')
-    {
-        counter6++;
-    }
-    else if (digit == '7')
-    {
-        counter7++;
-    }
-    else if (digit == '8')
-    {
-        counter8++;
-    }
-    else if (digit == '9')
-    {
-        counter9++;
-    }
+
 }
-Console.WriteLine(number);
-Console.WriteLine("0=" + counter0);
-Console.WriteLine("1=" + counter1);
-Console.WriteLine("2=" + counter2);
-Console.WriteLine("3=" + counter3);
-Console.WriteLine("4=" + counter4);
-Console.WriteLine("5=" + counter5);
-Console.WriteLine("6=" + counter6);
-Console.WriteLine("7=" + counter7);
-Console.WriteLine("8=" + counter8);
-Console.WriteLine("9=" + counter9);
+Console.WriteLine("Higest score is own by:  " + userWithMaxResult.Name + " " + userWithMaxResult.Surname);
+Console.WriteLine("Age is:  " + userWithMaxResult.age);
+Console.WriteLine("Score is:  " + maxResult);
+
+
+
+//1) stworzyc klase employee z Imie,nazwisko,wiek oraz zdobyte punkty
+//2) 3 pracownikow i kazdemu przydziel po 5 ocen z zakresu 1-10
+//3) napisz program ktory wyszuka pracownika z nawyzsza liczba punktow
+// a nastepnie wyswietli liczbe zdobytych punktow
