@@ -9,21 +9,20 @@ user1.AddScore(6);  // Sickness
 user1.AddScore(7);  // Efficiency
 user1.AddScore(9);  // Productivity
 user1.AddScore(10);  // Cooperation
-var result1 = user1.Result;
 
 user2.AddScore(10); // Time keeping
 user2.AddScore(10);  // Sickness
 user2.AddScore(10);  // Efficiency
 user2.AddScore(10);  // Productivity
 user2.AddScore(10);  // Cooperation
-var result2 = user2.Result;
+
 
 user3.AddScore(8); // Time keeping
 user3.AddScore(5);  // Sickness
 user3.AddScore(10);  // Efficiency
 user3.AddScore(10);  // Productivity
 user3.AddScore(5);  // Cooperation
-var result3 = user3.Result;
+
 
 List<Employee> users = new List<Employee>()
 {
@@ -44,7 +43,6 @@ Console.WriteLine("Higest score is own by:  " + userWithMaxResult.Name + " " + u
 Console.WriteLine("Age is:  " + userWithMaxResult.age);
 Console.WriteLine("Score is:  " + maxResult);
 Console.WriteLine("Congratulation!!!" );
-Console.Writekey(  );
 
 //1) stworzyc klase employee z Imie,nazwisko,wiek oraz zdobyte punkty
 //2) 3 pracownikow i kazdemu przydziel po 5 ocen z zakresu 1-10
