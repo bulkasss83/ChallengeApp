@@ -43,8 +43,8 @@ foreach (var user in users)
 Console.WriteLine("Higest score is own by:  " + userWithMaxResult.Name + " " + userWithMaxResult.Surname);
 Console.WriteLine("Age is:  " + userWithMaxResult.age);
 Console.WriteLine("Score is:  " + maxResult);
-
-
+Console.WriteLine("Congratulation!!!" );
+Console.Writekey(  );
 
 //1) stworzyc klase employee z Imie,nazwisko,wiek oraz zdobyte punkty
 //2) 3 pracownikow i kazdemu przydziel po 5 ocen z zakresu 1-10
