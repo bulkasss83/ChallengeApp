@@ -40,7 +40,7 @@ foreach (var user in users)
 
 }
 Console.WriteLine("Higest score is own by:  " + userWithMaxResult.Name + " " + userWithMaxResult.Surname);
-Console.WriteLine("Age is:  " + userWithMaxResult.age);
+Console.WriteLine("Age is:  " + userWithMaxResult.Age);
 Console.WriteLine("Score is:  " + maxResult);
 Console.WriteLine("Congratulation!!!" );
 
