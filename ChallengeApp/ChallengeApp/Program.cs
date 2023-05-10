@@ -1,50 +1,17 @@
 ﻿using ChallengeApp;
 
-Employee user1 = new Employee("Andrzej", "Nowak", "27");
-Employee user2 = new Employee("Wincenty", "Kowalski", "33");
-Employee user3 = new Employee("Eleonora", "Karas", "29");
+var employee = new Employee("Blazej", "Bulkasss");
 
-user1.AddScore(10); // Time keeping
-user1.AddScore(6);  // Sickness
-user1.AddScore(7);  // Efficiency
-user1.AddScore(9);  // Productivity
-user1.AddScore(10);  // Cooperation
+employee.AddGrade(9f);
+employee.AddGrade("1000");
+employee.AddGrade(6.5);
+employee.AddGrade(200);
+employee.AddGrade(3.5);
+employee.AddGrade(2);
+employee.AddGrade(6);
 
-user2.AddScore(10); // Time keeping
-user2.AddScore(10);  // Sickness
-user2.AddScore(10);  // Efficiency
-user2.AddScore(10);  // Productivity
-user2.AddScore(10);  // Cooperation
+var statistics = employee.GetStatistics();
 
-
-user3.AddScore(8); // Time keeping
-user3.AddScore(5);  // Sickness
-user3.AddScore(10);  // Efficiency
-user3.AddScore(10);  // Productivity
-user3.AddScore(5);  // Cooperation
-
-
-List<Employee> users = new List<Employee>()
-{
-    user1, user2, user3
-};
-int maxResult = 0;
-Employee userWithMaxResult = null;
-foreach (var user in users)
-{
-    if (user.Result > maxResult)
-    {
-        maxResult = user.Result;
-        userWithMaxResult = user;
-    }
-
-}
-Console.WriteLine("Higest score is own by:  " + userWithMaxResult.Name + " " + userWithMaxResult.Surname);
-Console.WriteLine("Age is:  " + userWithMaxResult.Age);
-Console.WriteLine("Score is:  " + maxResult);
-Console.WriteLine("Congratulation!!!" );
-
-//1) stworzyc klase employee z Imie,nazwisko,wiek oraz zdobyte punkty
-//2) 3 pracownikow i kazdemu przydziel po 5 ocen z zakresu 1-10
-//3) napisz program ktory wyszuka pracownika z nawyzsza liczba punktow
-// a nastepnie wyswietli liczbe zdobytych punktow
+Console.WriteLine($"Average: {statistics.Average:N2}"); 
+Console.WriteLine($"Min: {statistics.Min}");
+Console.WriteLine($"Max: {statistics.Max}");
